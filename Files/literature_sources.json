@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.4.0",
+  "sources": {
+    "3a8cf11f778a1d2f734e3f4648614edb8abd9ffe698e46c7f7bc5a13a7c8ab3d": {
+      "filename": "Charan.pdf",
+      "title": "A framework for automating failure modes and effects analysis (FMEA) using large language models (LLMs) and retrieval-augmented generation (RAG)",
+      "authors": ["Kamal V. Charan", "Maneesh Singh", "Surender Redhu", "Gunjan Soni"],
+      "year": 2026,
+      "doi": "10.1007/s13198-026-03171-6",
+      "source_url": "https://doi.org/10.1007/s13198-026-03171-6",
+      "printed_page_start": 1495,
+      "layout": "two_columns",
+      "excluded": true,
+      "exclusion_reason": "User instruction: do not use Charan in the project corpus or pilots.",
+      "review_status": "excluded_by_user",
+      "diagnostic_approved": false,
+      "role": "methodological_background",
+      "notes": "FMEA and pump applications; not verified HVAC diagnostic evidence. The page layout was visually inspected. Table and figure content is quarantined, not transcribed as prose. All text remains in the extraction audit.",
+      "exclude_regions": [
+        {"page": 1, "bbox": [0, 0, 596, 240], "reason": "front_matter"},
+        {"page": 1, "bbox": [0, 600, 300, 730], "reason": "author_affiliations"},
+        {"page": 9, "bbox": [0, 415, 596, 730], "reason": "table_1_manual_quarantine"},
+        {"page": 10, "bbox": [0, 50, 596, 730], "reason": "table_2_and_figure_3_manual_quarantine"},
+        {"page": 14, "bbox": [0, 0, 596, 791], "reason": "declarations_and_references"},
+        {"page": 15, "bbox": [0, 0, 596, 791], "reason": "references"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+# Uses Colab's existing CUDA-enabled PyTorch. No numerical pickle loading or PDF tools.
+transformers==4.57.1
+accelerate==1.11.0
+bitsandbytes==0.48.1
+tokenizers==0.22.2
+huggingface-hub==0.36.0

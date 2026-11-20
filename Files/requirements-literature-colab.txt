@@ -1,0 +1,4 @@
+-r requirements-literature.txt
+transformers==4.57.1
+accelerate==1.11.0
+bitsandbytes==0.48.1

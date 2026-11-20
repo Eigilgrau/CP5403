@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.7.0",
+  "development_order": ["C", "D"],
+  "current_stage": "condition_C_validation_pilot",
+  "experiment_id": "phm2015_literature_added_to_cases",
+  "research_question": "What does adding retrieved literature contribute to classification, explanation support, and cost when Qwen already receives historical cases?",
+  "conditions": {
+    "C": {"name": "Qwen with historical cases", "historical_cases": true, "literature": false},
+    "D": {"name": "Qwen with historical cases and literature", "historical_cases": true, "literature": true}
+  },
+  "generator": {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "quantisation": "NF4 4-bit, double quantisation, float16 compute",
+    "do_sample": false,
+    "seed": 5403,
+    "max_input_tokens": 4096,
+    "max_new_tokens": 512
+  },
+  "paired_controls": {
+    "same_query_ids": true,
+    "same_features_and_regression_scores": true,
+    "same_historical_case_ids_and_order": true,
+    "same_generator_and_decoding": true,
+    "query_labels_outside_prompts_and_retrieval": true
+  },
+  "retrieval": {
+    "historical_k": 3,
+    "literature_k": 2,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "approved_literature_only": true,
+    "freeze_corpus_before_test": true
+  },
+  "evaluation": {
+    "validation_pilot_queries": 10,
+    "test_sample_size": null,
+    "settings_frozen": false,
+    "diagnostic_generations_per_query": 2,
+    "notes": "Build and validate C first using the portable validation evidence. The initial Colab smoke pilot runs three cases; the planned validation pilot contains ten. D remains a later extension requiring permitted, approved literature. The two-generations setting describes the eventual paired C/D study, not two repeated C generations. Generation budgets and final sample size must be frozen after paired validation and before test scoring."
+  }
+}
