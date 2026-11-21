@@ -37,6 +37,7 @@ class DiagnosisChecks(unittest.TestCase):
         self.output = {"predicted_class": "RuntimeExcessive", "feature_evidence": [{"feature": "ch1_median", "value": 1.23457}],
             "case_comparison": {"case_id": "synthetic_history_1", "similarity_feature": "ch1_median", "difference_feature": "ch2_change"},
             "literature_citations": [], "explanation": "Synthetic test explanation.", "limitation": "Synthetic test limitation."}
+        self.output["comparison_claims"] = diagnosis.comparison_claims(self.record, self.record["historical_cases"][1])
 
     def tearDown(self):
         self.temp.cleanup()
@@ -61,12 +62,44 @@ class DiagnosisChecks(unittest.TestCase):
 
     def test_compact_prompt_preserves_all_features_and_history_order(self):
         request = self.request()
-        payload = json.loads(request["messages"][1]["content"].split("\n", 1)[1])
+        payload = json.loads(request["messages"][1]["content"].splitlines()[1])
         self.assertEqual(payload["feature_order"], self.dictionary["feature_order"])
-        self.assertEqual(payload["query"]["feature_values"], [1.23457, 4.0])
+        self.assertEqual(payload["query"]["feature_values"], {"ch1_median": 1.23457, "ch2_change": 4.0})
+        self.assertEqual(payload["query"]["missing_query_features"], [])
         self.assertEqual([c["case_id"] for c in payload["historical_cases"]], [c["case_id"] for c in self.record["historical_cases"]])
         self.assertTrue(all(len(c["feature_values"]) == 2 for c in payload["historical_cases"]))
         self.assertEqual(request["evidence_sha256"], diagnosis.fingerprint(self.record))
+
+    def test_copyable_comparisons_and_missing_flags_match_the_source(self):
+        payload = json.loads(self.request()["messages"][1]["content"].splitlines()[1])
+        for item, original in zip(payload["historical_cases"], self.record["historical_cases"], strict=True):
+            comparison = item["copyable_case_comparison"]
+            self.assertEqual(comparison["case_id"], original["case_id"])
+            self.assertEqual(comparison["similarity_feature"], original["comparison"][0]["feature"])
+            self.assertEqual(comparison["difference_feature"], original["comparison"][1]["feature"])
+            self.assertEqual(item["feature_values"], original["feature_values"])
+        self.record["feature_values"]["ch2_change"] = None
+        for item in self.record["historical_cases"]:
+            item["comparison"][1]["query_value"] = None
+        payload = json.loads(self.request()["messages"][1]["content"].splitlines()[1])
+        self.assertEqual(payload["query"]["missing_query_features"], ["ch2_change"])
+
+    def test_prose_numbers_are_not_confused_with_factual_validation(self):
+        output = deepcopy(self.output)
+        output["explanation"] = "The ch3 comparison differs from the cited case."
+        self.assertTrue(diagnosis.validate_response(json.dumps(output), self.record)["valid"])
+        output["explanation"] = "The cited historical IQR is 36.25."
+        check = diagnosis.validate_response(json.dumps(output), self.record)
+        self.assertTrue(check["valid"])
+        self.assertEqual(check["prose_support"], "not_automatically_assessed")
+
+    def test_wrong_historical_values_and_relations_are_rejected(self):
+        for key, value in (("historical_value", 36.25), ("relation", "threshold"), ("query_value", True)):
+            output = deepcopy(self.output)
+            output["comparison_claims"][0][key] = value
+            check = diagnosis.validate_response(json.dumps(output), self.record)
+            self.assertFalse(check["comparison_claims_valid"])
+            self.assertIn("comparison_claims_not_supported_by_cited_case", check["errors"])
 
     def test_D_cannot_silently_run_without_literature(self):
         with self.assertRaisesRegex(ValueError, "D requires"):
@@ -115,7 +148,7 @@ class DiagnosisChecks(unittest.TestCase):
             with self.subTest(text=text):
                 self.assertFalse(diagnosis.validate_response(text, self.record)["valid"])
         abstain = deepcopy(self.output)
-        abstain.update(predicted_class="InsufficientEvidence", feature_evidence=[], case_comparison=None)
+        abstain.update(predicted_class="InsufficientEvidence", feature_evidence=[], case_comparison=None, comparison_claims=[])
         self.assertTrue(diagnosis.validate_response(json.dumps(abstain), self.record)["valid"])
 
     def test_cache_identity_changes_with_evidence_prompt_or_generation_settings(self):
@@ -170,6 +203,7 @@ class DiagnosisChecks(unittest.TestCase):
         self.assertEqual(report.data["status"], "failed")
         self.assertIn("synthetic GPU failure", (report.folder / "traceback.txt").read_text())
         self.assertFalse(report.data["diagnostic_experiment_executed"])
+
         report.finish()
 
     def test_pilot_scores_use_separate_labels_and_report_incomplete_outputs(self):
@@ -192,6 +226,21 @@ class DiagnosisChecks(unittest.TestCase):
         self.assertEqual(report.data["status"], "completed_with_issues")
         self.assertTrue(report.data["diagnostic_inference_observed"])
         self.assertFalse(report.data["diagnostic_experiment_executed"])
+
+        # A correct class must remain correct when a separate factual claim fails.
+        output = deepcopy(self.output)
+        output["comparison_claims"][0]["historical_value"] = 36.25
+        envelope = self.envelope()
+        envelope["raw_output"] = json.dumps(output)
+        envelope["raw_output_sha256"] = diagnosis.fingerprint(envelope["raw_output"])
+        atomic_json(cache / (request["request_id"] + ".json"), envelope)
+        next_report = RunReport(self.root, "synthetic_separate_metrics")
+        metrics = diagnosis.capture_diagnostics(next_report, bundle, cache, [request], [self.record], score=True)
+        self.assertEqual(metrics["classification_accuracy_over_attempted"], 1)
+        self.assertEqual(metrics["accuracy_over_attempted"], 0)
+        self.assertEqual(metrics["structured_comparisons_verified"], 0)
+        next_report.finish()
+
 
 
 if __name__ == "__main__":

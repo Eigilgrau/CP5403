@@ -416,7 +416,9 @@ class RunReport:
                       "- Automatic JSON, citation and numeric checks do not assess full explanation support or replace human review.",
                       "- Inspect `diagnostic_requests.jsonl`, `diagnostic_responses.json` and `diagnostic_status.csv`."]
             if "accuracy_over_attempted" in diagnosis:
-                lines += [f"- Development accuracy over attempted queries: {diagnosis['accuracy_over_attempted']}.",
+                lines += [f"- Joint output-valid-and-correct rate: {diagnosis['accuracy_over_attempted']}.",
+                          f"- Parsed-label classification accuracy: {diagnosis.get('classification_accuracy_over_attempted', 'not separately recorded in this older run')}.",
+                          f"- Responses with verified structured comparisons: {diagnosis.get('structured_comparisons_verified', 'not recorded')}.",
                           "- This small, balanced validation pilot is a workflow check, not a test-set performance claim."]
         if self.data["notes"]:
             lines += ["", "## Notes", ""] + ["- " + n for n in self.data["notes"]]

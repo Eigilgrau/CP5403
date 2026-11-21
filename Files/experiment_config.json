@@ -15,7 +15,7 @@
     "do_sample": false,
     "seed": 5403,
     "max_input_tokens": 4096,
-    "max_new_tokens": 512
+    "max_new_tokens": 768
   },
   "paired_controls": {
     "same_query_ids": true,
