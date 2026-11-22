@@ -4,7 +4,12 @@
     "3a8cf11f778a1d2f734e3f4648614edb8abd9ffe698e46c7f7bc5a13a7c8ab3d": {
       "filename": "Charan.pdf",
       "title": "A framework for automating failure modes and effects analysis (FMEA) using large language models (LLMs) and retrieval-augmented generation (RAG)",
-      "authors": ["Kamal V. Charan", "Maneesh Singh", "Surender Redhu", "Gunjan Soni"],
+      "authors": [
+        "Kamal V. Charan",
+        "Maneesh Singh",
+        "Surender Redhu",
+        "Gunjan Soni"
+      ],
       "year": 2026,
       "doi": "10.1007/s13198-026-03171-6",
       "source_url": "https://doi.org/10.1007/s13198-026-03171-6",
@@ -17,12 +22,308 @@
       "role": "methodological_background",
       "notes": "FMEA and pump applications; not verified HVAC diagnostic evidence. The page layout was visually inspected. Table and figure content is quarantined, not transcribed as prose. All text remains in the extraction audit.",
       "exclude_regions": [
-        {"page": 1, "bbox": [0, 0, 596, 240], "reason": "front_matter"},
-        {"page": 1, "bbox": [0, 600, 300, 730], "reason": "author_affiliations"},
-        {"page": 9, "bbox": [0, 415, 596, 730], "reason": "table_1_manual_quarantine"},
-        {"page": 10, "bbox": [0, 50, 596, 730], "reason": "table_2_and_figure_3_manual_quarantine"},
-        {"page": 14, "bbox": [0, 0, 596, 791], "reason": "declarations_and_references"},
-        {"page": 15, "bbox": [0, 0, 596, 791], "reason": "references"}
+        {
+          "page": 1,
+          "bbox": [
+            0,
+            0,
+            596,
+            240
+          ],
+          "reason": "front_matter"
+        },
+        {
+          "page": 1,
+          "bbox": [
+            0,
+            600,
+            300,
+            730
+          ],
+          "reason": "author_affiliations"
+        },
+        {
+          "page": 9,
+          "bbox": [
+            0,
+            415,
+            596,
+            730
+          ],
+          "reason": "table_1_manual_quarantine"
+        },
+        {
+          "page": 10,
+          "bbox": [
+            0,
+            50,
+            596,
+            730
+          ],
+          "reason": "table_2_and_figure_3_manual_quarantine"
+        },
+        {
+          "page": 14,
+          "bbox": [
+            0,
+            0,
+            596,
+            791
+          ],
+          "reason": "declarations_and_references"
+        },
+        {
+          "page": 15,
+          "bbox": [
+            0,
+            0,
+            596,
+            791
+          ],
+          "reason": "references"
+        }
+      ]
+    },
+    "e2ed6a02514aeb1e2efc1b2abf0c93c7fabc54951dc0bcfa8115b327ab3262e9": {
+      "filename": "01_Kim_2016_PHM2015_Fault_Log_Recovery.pdf",
+      "title": "Fault Log Recovery Using an Incomplete-data-trained FDA Classifier for Failure Diagnosis of Engineered Systems",
+      "authors": [
+        "Hyunjae Kim",
+        "Jong Moon Ha",
+        "Jungho Park",
+        "Sunuwe Kim",
+        "Keunsu Kim",
+        "Beom Chan Jang",
+        "Hyunseok Oh",
+        "Byeng D. Youn"
+      ],
+      "year": 2016,
+      "layout": "two_columns",
+      "excluded": false,
+      "diagnostic_approved": false,
+      "review_status": "identity_verified_passage_review_pending",
+      "role": "PHM2015_context",
+      "notes": "Dataset interpretation and incomplete fault logs; screen site-specific examples and inferred sensor mappings.",
+      "searchable_scan": false,
+      "exclude_regions": []
+    },
+    "37d165364f32f6745b1fbbe8a65331bff86099a6877bc801cfaa04d5a55b1f2c": {
+      "filename": "02_Xiao_2016_PHM2015_Industrial_Plant_Faults.pdf",
+      "title": "A Probabilistic Machine Learning Approach to Detect Industrial Plant Faults",
+      "authors": [
+        "Wei Xiao"
+      ],
+      "year": 2016,
+      "layout": "two_columns",
+      "excluded": false,
+      "diagnostic_approved": false,
+      "review_status": "identity_verified_passage_review_pending",
+      "role": "PHM2015_context",
+      "notes": "Dataset and temporal fault context; exclude site-specific outcome tables and benchmark results from diagnostic retrieval.",
+      "searchable_scan": false,
+      "exclude_regions": []
+    },
+    "1be266431d87d3096fc76141928eb1cc8bf2d0d87468a40dde7ba5ed90ac6892": {
+      "filename": "03_Schein_2006_AHU_Rule_Based_Fault_Detection.pdf",
+      "title": "A rule-based fault detection method for air handling units",
+      "authors": [
+        "Jeffrey Schein",
+        "Steven T. Bushby",
+        "Natascha S. Castro",
+        "John M. House"
+      ],
+      "year": 2006,
+      "layout": "two_columns",
+      "excluded": false,
+      "diagnostic_approved": false,
+      "review_status": "identity_verified_passage_review_pending",
+      "role": "HVAC_domain",
+      "notes": "Operating-mode-specific AHU diagnostic rules; retain required sensor meanings and operating assumptions.",
+      "searchable_scan": false,
+      "exclude_regions": []
+    },
+    "9a1da0a8838937fbaa3601562e41f7eb2cac88dbc766e64c3c62d32a412859be": {
+      "filename": "04_Schein_2006_NISTIR7365_AHU_VAV_Field_Testing.pdf",
+      "title": "Results from Field Testing of Embedded Air Handling Unit and Variable Air Volume Box Fault Detection Tools",
+      "authors": [
+        "Jeffrey Schein"
+      ],
+      "year": 2006,
+      "layout": "single_column",
+      "excluded": false,
+      "diagnostic_approved": false,
+      "review_status": "identity_verified_passage_review_pending",
+      "role": "HVAC_domain",
+      "notes": "Field-observed mechanical and control faults; screen overlap with other APAR/VPACC publications.",
+      "searchable_scan": false,
+      "exclude_regions": [
+        {
+          "page": 1,
+          "bbox": [
+            0.0,
+            0.0,
+            612.0,
+            792.0
+          ],
+          "reason": "front_matter"
+        },
+        {
+          "page": 2,
+          "bbox": [
+            0.0,
+            0.0,
+            612.0,
+            792.0
+          ],
+          "reason": "front_matter"
+        }
+      ]
+    },
+    "7c3af3d01c6f0c8802888a120dac3cc26ef6bc6926579939e504cd3c7be7849e": {
+      "filename": "05_Schein_Bushby_2006_Hierarchical_HVAC_Diagnosis.pdf",
+      "title": "A Hierarchical Rule-Based Fault Detection and Diagnostic Method for HVAC Systems",
+      "authors": [
+        "Jeffrey Schein",
+        "Steven T. Bushby"
+      ],
+      "year": 2006,
+      "layout": "single_column",
+      "excluded": false,
+      "diagnostic_approved": false,
+      "review_status": "identity_verified_passage_review_pending",
+      "role": "HVAC_domain",
+      "notes": "Equipment interactions and scheduling inconsistencies; contextual evidence, not a verified PHM plant topology.",
+      "searchable_scan": false,
+      "exclude_regions": [
+        {
+          "page": 1,
+          "bbox": [
+            0.0,
+            0.0,
+            634.3200073242188,
+            833.0399780273438
+          ],
+          "reason": "front_matter"
+        }
+      ]
+    },
+    "eb55b4467233f071eb6f0624aefe7b4695939ade1c19825b7edbbb476f09ed5c": {
+      "filename": "06_Schein_2003_NISTIR7036_AHU_VAV_Laboratory_Testing.pdf",
+      "title": "Results from Laboratory Testing of Embedded Air Handling Unit and Variable Air Volume Box Fault Detection Tools",
+      "authors": [
+        "Jeffrey Schein",
+        "Steven T. Bushby",
+        "John M. House"
+      ],
+      "year": 2003,
+      "layout": "single_column",
+      "excluded": false,
+      "diagnostic_approved": false,
+      "review_status": "identity_verified_passage_review_pending",
+      "role": "HVAC_domain",
+      "notes": "Replacement verified as NISTIR 7036, August 2003, Schein/Bushby/House. Searchable scan with existing OCR text layer; 42 PDF pages. Prose sampled on PDF pages 5, 9, 16 and 26 is usable after whitespace cleanup. Formula, figure and table extraction includes OCR errors: exclude unless visually checked/transcribed. No additional whole-document OCR required for prose ingestion.",
+      "searchable_scan": true,
+      "exclude_regions": [
+        {
+          "page": 1,
+          "bbox": [
+            0.0,
+            0.0,
+            621.0,
+            832.0
+          ],
+          "reason": "front_matter"
+        },
+        {
+          "page": 2,
+          "bbox": [
+            0.0,
+            0.0,
+            607.0,
+            832.0
+          ],
+          "reason": "front_matter"
+        },
+        {
+          "page": 3,
+          "bbox": [
+            0.0,
+            0.0,
+            607.0,
+            832.0
+          ],
+          "reason": "front_matter"
+        },
+        {
+          "page": 4,
+          "bbox": [
+            0.0,
+            0.0,
+            607.0,
+            832.0
+          ],
+          "reason": "front_matter"
+        }
+      ]
+    },
+    "7fa649c2aa92ba9e57a1afeb5b5dfa71f62b283e36269ba003363e25e5d61609": {
+      "filename": "07_Wu_2018_PHM2015_Imbalanced_Fault_Diagnosis.pdf",
+      "title": "A Weighted Deep Representation Learning Model for Imbalanced Fault Diagnosis in Cyber-Physical Systems",
+      "authors": [
+        "Zhenyu Wu",
+        "Yang Guo",
+        "Wenfang Lin",
+        "Shuyang Yu",
+        "Yang Ji"
+      ],
+      "year": 2018,
+      "layout": "single_column",
+      "excluded": false,
+      "diagnostic_approved": false,
+      "review_status": "identity_verified_passage_review_pending",
+      "role": "selective_PHM2015_context",
+      "notes": "Select dataset-background passages; exclude architecture, training details and site-specific results.",
+      "searchable_scan": false,
+      "exclude_regions": []
+    },
+    "82196da6f887d5dd1e093229aa7d7ffb7a91c1e4e46d5da4c1439fcbb045a80d": {
+      "filename": "08_Zhang_2020_TR2019_110_Multilabel_Time_Series.pdf",
+      "title": "Multi-label Prediction in Time Series Data using Deep Neural Networks",
+      "authors": [
+        "Wenyu Zhang",
+        "Devesh K. Jha",
+        "Emil Laftchiev",
+        "Daniel Nikovski"
+      ],
+      "year": 2020,
+      "layout": "two_columns",
+      "excluded": false,
+      "diagnostic_approved": false,
+      "review_status": "identity_verified_passage_review_pending",
+      "role": "selective_PHM2015_context",
+      "notes": "2020 date follows supplied MERL cover; retain report identifier TR2019-110. Select PHM temporal/concurrent-fault context only.",
+      "searchable_scan": false,
+      "exclude_regions": [
+        {
+          "page": 1,
+          "bbox": [
+            0.0,
+            0.0,
+            612.0,
+            792.0
+          ],
+          "reason": "front_matter"
+        },
+        {
+          "page": 2,
+          "bbox": [
+            0.0,
+            0.0,
+            612.0,
+            792.0
+          ],
+          "reason": "front_matter"
+        }
       ]
     }
   }

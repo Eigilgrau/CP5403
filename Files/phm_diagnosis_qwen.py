@@ -13,12 +13,13 @@ from phm_diagnosis import capture_diagnostics, fingerprint, inspect_cache, prepa
 from phm_run_reporting import RunReport, atomic_json, atomic_text, load_experiment_config, utc_now
 
 
-def _infer(requests, records, cache_dir, config, reporter, retry_errors):
+def _infer(requests, records, cache_dir, config, reporter, retry_errors,
+           inspect_fn=inspect_cache, validate_fn=validate_response, capture_fn=capture_diagnostics):
     cache_dir = Path(cache_dir)
     cache_dir.mkdir(parents=True, exist_ok=True)
     pending = []
     for request, record in zip(requests, records, strict=True):
-        checked, _ = inspect_cache(cache_dir / (request["request_id"] + ".json"), request, record)
+        checked, _ = inspect_fn(cache_dir / (request["request_id"] + ".json"), request, record)
         if checked["status"] == "not_run" or (retry_errors and checked["status"] in {"runtime_error", "invalid_response", "invalid_cache"}):
             pending.append((request, record))
     if not pending:
@@ -77,7 +78,7 @@ def _infer(requests, records, cache_dir, config, reporter, retry_errors):
             response = {"origin": "model_inference", "started_utc": utc_now(), "runtime": runtime,
                         **{key: request[key] for key in ("request_id", "case_id", "condition", "generator", "evidence_sha256")},
                         "raw_output": None, "error": None}
-            reporter.event("diagnostic_request_started", request_id=request["request_id"], case_id=request["case_id"], condition="C")
+            reporter.event("diagnostic_request_started", request_id=request["request_id"], case_id=request["case_id"], condition=request["condition"])
             reporter.data["metrics"]["diagnostic_progress"] = {"status": "generating", "case_id": request["case_id"], "completed_this_run": completed}
             reporter.save()
             request_started = perf_counter()
@@ -92,9 +93,13 @@ def _infer(requests, records, cache_dir, config, reporter, retry_errors):
                 torch.cuda.synchronize()
                 torch.cuda.reset_peak_memory_stats()
                 generation_started = perf_counter()
+                generation_options = {}
+                if request.get('output_schema') is not None:
+                    from phm_output_schema import prefix_constraint
+                    generation_options['prefix_allowed_tokens_fn'] = prefix_constraint(tokenizer, request['output_schema'])
                 with torch.inference_mode():
                     generated = model.generate(**inputs, do_sample=False, max_new_tokens=generator["max_new_tokens"],
-                                               pad_token_id=tokenizer.eos_token_id)
+                                               pad_token_id=tokenizer.eos_token_id, **generation_options)
                 torch.cuda.synchronize()
                 response["generation_seconds"] = perf_counter() - generation_started
                 tail = generated[0, response["input_tokens"]:]
@@ -102,7 +107,7 @@ def _infer(requests, records, cache_dir, config, reporter, retry_errors):
                 response["raw_output"] = tokenizer.decode(tail, skip_special_tokens=True)
                 response["generation_hit_limit"] = len(tail) >= generator["max_new_tokens"]
                 response["peak_cuda_allocated_bytes"] = int(torch.cuda.max_memory_allocated())
-                response["validation_at_generation"] = validate_response(response["raw_output"], record)
+                response["validation_at_generation"] = validate_fn(response["raw_output"], record)
             except (RuntimeError, ValueError) as exc:
                 response["error"] = f"{type(exc).__name__}: {exc}"
             finally:
@@ -114,7 +119,7 @@ def _infer(requests, records, cache_dir, config, reporter, retry_errors):
             reporter.event("diagnostic_response_cached", request_id=request["request_id"], error=response["error"],
                            generation_seconds=response.get("generation_seconds"), input_tokens=response.get("input_tokens"),
                            output_tokens=response.get("output_tokens"))
-            capture_diagnostics(reporter, reporter.root / "Datasets/PHM15-diagnosis/validation_pilot_v1", cache_dir, requests, records)
+            capture_fn(reporter, reporter.root / "Datasets/PHM15-diagnosis/validation_pilot_v1", cache_dir, requests, records)
             checked = response.get("validation_at_generation", {})
             print(record["case_id"][:12], response["error"] or ("valid JSON and cited fields" if checked.get("valid") else "saved; needs review"), flush=True)
             if response["error"]:

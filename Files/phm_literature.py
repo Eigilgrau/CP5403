@@ -129,6 +129,11 @@ def extract_pdf(path, policy):
         for number, page in enumerate(pdf, 1):
             blocks = []
             images = [list(item["bbox"]) for item in page.get_image_info()]
+            # A reviewed searchable scan uses a page image behind its OCR text.
+            # Retain smaller images as exclusions; passage approval remains separate.
+            if policy.get("searchable_scan"):
+                images = [box for box in images
+                          if pymupdf.Rect(box).get_area() < page.rect.get_area() * 0.90]
             tables = [list(table.bbox) for table in page.find_tables().tables]
             for index, block in enumerate(page.get_text("dict", sort=False)["blocks"]):
                 if block["type"] != 0:

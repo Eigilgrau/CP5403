@@ -1,0 +1,32 @@
+{
+  "version": "literature-role-filter-v1",
+  "reviewer": "assistant; not independent human review",
+  "basis": "Passage applicability, without query reference labels. Cosine ranking and distinct-document selection retained within eligible passages.",
+  "eligible": {
+    "NoRecordedTarget": [
+      "lit_21942c3d291b69d3e4d3",
+      "lit_5a70b4debe132b2ebac5",
+      "lit_fb985d1bcc1e4faf4e3b",
+      "lit_fbd832dd087faf165101",
+      "lit_93d356407245ded262ba"
+    ],
+    "RuntimeExcessive": [
+      "lit_867a9fc28449e5289819",
+      "lit_fbd832dd087faf165101",
+      "lit_fb985d1bcc1e4faf4e3b",
+      "lit_21942c3d291b69d3e4d3"
+    ],
+    "SupplyTempTooCold": [
+      "lit_a0fe91e2678aeeaec042",
+      "lit_7a1f76e795181d69e9c8",
+      "lit_87a8069dd3d7ccc4a945",
+      "lit_fb985d1bcc1e4faf4e3b",
+      "lit_21942c3d291b69d3e4d3"
+    ]
+  },
+  "limitations": [
+    "Filtering is a development choice, not proof of improved accuracy.",
+    "External HVAC examples cannot identify anonymous PHM channel meanings.",
+    "Short fault-injection procedures are excluded; no new passage approvals are granted."
+  ]
+}

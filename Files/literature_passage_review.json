@@ -1,0 +1,310 @@
+{
+  "version": "reviewed-spans-v1",
+  "review_date": "2026-11-22",
+  "reviewer": "assistant",
+  "independent_human_review": false,
+  "selection_basis": "Conservative exact spans read from extracted paragraphs. No PHM site-specific outcomes, example trajectories, performance tables, inferred sensor mappings, references, equations or model-training sections. External HVAC examples remain identified as external examples.",
+  "chunking_decision": "Reviewed passages use deterministic source-preserving sentence boundaries. Earlier Qwen pilot remains separate; these chunks are not represented as Qwen-generated.",
+  "excluded_material": "All unlisted spans remain excluded from this index. Overlapping general APAR mode descriptions retained only from source 03; source 04 contributes distinct operational limitations and a field counterexample.",
+  "selections": [
+    {
+      "id": "reviewed_001",
+      "topic": "Incomplete fault logs and undisclosed plant design",
+      "scope": "PHM2015_dataset_context",
+      "applicability": "Historical PHM challenge description; does not map published anonymous sensors, fault codes or challenge splits onto current channels, labels or site partitions.",
+      "spans": [
+        {
+          "paragraph_id": "doc_e2ed6a02514aeb1e.p001.b008",
+          "end": " This paper presents"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_002",
+      "topic": "Missing fault logs and temporal event boundaries",
+      "scope": "PHM2015_dataset_context",
+      "applicability": "Historical PHM challenge description; does not map published anonymous sensors, fault codes or challenge splits onto current channels, labels or site partitions.",
+      "spans": [
+        {
+          "paragraph_id": "doc_e2ed6a02514aeb1e.p001.b012"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_003",
+      "topic": "PHM challenge fault classification versus event timing",
+      "scope": "PHM2015_dataset_context",
+      "applicability": "Historical PHM challenge description; does not map published anonymous sensors, fault codes or challenge splits onto current channels, labels or site partitions.",
+      "spans": [
+        {
+          "paragraph_id": "doc_37d165364f32f674.p001.b012"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_004",
+      "topic": "AHU operating modes and temperature-control relationships",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_1be266431d87d309.p002.b004"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_005",
+      "topic": "Mode-dependent diagnosis requires occupancy and control signals",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_1be266431d87d309.p002.b006",
+          "end": " For convenience"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_006",
+      "topic": "Unknown operating mode can reflect transitions or simultaneous heating and cooling",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_1be266431d87d309.p003.b001",
+          "end": " Once the mode"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_007",
+      "topic": "Sensor calibration limits detectable fault severity",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_1be266431d87d309.p005.b003"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_008",
+      "topic": "Temperature sensor failure experiment",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_1be266431d87d309.p005.b008"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_009",
+      "topic": "Stuck valve or damper experiment",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_1be266431d87d309.p005.b009"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_010",
+      "topic": "Economizer control logic fault",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_1be266431d87d309.p005.b010"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_011",
+      "topic": "Avoiding transient false alarms with delays and averaged measurements",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_9a1da0a8838937fb.p006.b004",
+          "start": "Several modifications",
+          "end": " The rules in Table"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_012",
+      "topic": "Too-low supply air temperature: field example with an alternative cause",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_9a1da0a8838937fb.p040.b004",
+          "start": "For most of the day shown"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_013",
+      "topic": "Fifteen-minute sampling can hide rapid valve cycling",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_9a1da0a8838937fb.p051.b004",
+          "start": "The actual rate",
+          "end": " Whenever the heating"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_014",
+      "topic": "Scheduling and upstream supply problems can cause downstream alarms",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_7c3af3d01c6f0c88.p002.b006",
+          "start": "House et al. (2001)",
+          "end": " The common thread"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_015",
+      "topic": "Source-load fluid interfaces and temperature pressure setpoints",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_7c3af3d01c6f0c88.p003.b001",
+          "start": "The temperature",
+          "end": " In order to present"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_016",
+      "topic": "Hierarchical diagnosis can suppress unrelated downstream faults",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_7c3af3d01c6f0c88.p005.b002",
+          "start": "In some cases",
+          "end": " The rule set was generated"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_017",
+      "topic": "Fault threshold tradeoff between false alarms and missed faults",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_7c3af3d01c6f0c88.p005.b002",
+          "start": "A fault threshold",
+          "end": " Effective values"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_018",
+      "topic": "Laboratory VAV damper stuck partially open",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_eb55b4467233f071.p026.b013"
+        },
+        {
+          "paragraph_id": "doc_eb55b4467233f071.p026.b014"
+        },
+        {
+          "paragraph_id": "doc_eb55b4467233f071.p026.b015"
+        },
+        {
+          "paragraph_id": "doc_eb55b4467233f071.p026.b016"
+        },
+        {
+          "paragraph_id": "doc_eb55b4467233f071.p026.b017"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_019",
+      "topic": "Laboratory hydronic reheat valve stuck partially open",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_eb55b4467233f071.p026.b018"
+        },
+        {
+          "paragraph_id": "doc_eb55b4467233f071.p026.b019"
+        },
+        {
+          "paragraph_id": "doc_eb55b4467233f071.p026.b020"
+        },
+        {
+          "paragraph_id": "doc_eb55b4467233f071.p026.b021"
+        },
+        {
+          "paragraph_id": "doc_eb55b4467233f071.p026.b022"
+        },
+        {
+          "paragraph_id": "doc_eb55b4467233f071.p026.b023"
+        },
+        {
+          "paragraph_id": "doc_eb55b4467233f071.p026.b024"
+        },
+        {
+          "paragraph_id": "doc_eb55b4467233f071.p026.b025"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_020",
+      "topic": "Laboratory failed differential pressure sensor",
+      "scope": "external_HVAC_context",
+      "applicability": "External equipment-specific context only. Required physical measurements, operating modes and topology must be established before applying a rule; do not infer anonymous channel meanings or assert a root cause.",
+      "spans": [
+        {
+          "paragraph_id": "doc_eb55b4467233f071.p026.b026"
+        },
+        {
+          "paragraph_id": "doc_eb55b4467233f071.p026.b027"
+        },
+        {
+          "paragraph_id": "doc_eb55b4467233f071.p026.b028"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_021",
+      "topic": "PHM sampling interval and historical event prediction objective",
+      "scope": "PHM2015_dataset_context",
+      "applicability": "Historical PHM challenge description; does not map published anonymous sensors, fault codes or challenge splits onto current channels, labels or site partitions.",
+      "spans": [
+        {
+          "paragraph_id": "doc_7fa649c2aa92ba9e.p009.b004",
+          "end": " In our case"
+        }
+      ]
+    },
+    {
+      "id": "reviewed_022",
+      "topic": "Component-to-zone mapping is not provided",
+      "scope": "PHM2015_dataset_context",
+      "applicability": "Historical PHM challenge description; does not map published anonymous sensors, fault codes or challenge splits onto current channels, labels or site partitions.",
+      "spans": [
+        {
+          "paragraph_id": "doc_82196da6f887d5dd.p010.b007",
+          "end": " This information is formatted"
+        }
+      ]
+    }
+  ]
+}

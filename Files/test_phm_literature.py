@@ -12,6 +12,24 @@ import phm_literature as lit
 
 
 class LiteratureChecks(unittest.TestCase):
+    def test_searchable_scan_background_preserves_text_only_when_declared(self):
+        import pymupdf
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "searchable_scan.pdf"
+            doc = pymupdf.open()
+            page = doc.new_page(width=300, height=400)
+            pixel = pymupdf.Pixmap(pymupdf.csRGB, pymupdf.IRect(0, 0, 2, 2), False)
+            pixel.clear_with(255)
+            page.insert_image(page.rect, stream=pixel.tobytes("png"))
+            page.insert_text((30, 120), "The fan operates during occupied hours.")
+            doc.save(path)
+            doc.close()
+            regular = lit.extract_pdf(path, {"layout": "single_column"})
+            scanned = lit.extract_pdf(path, {"layout": "single_column", "searchable_scan": True})
+            self.assertEqual(len(regular["paragraphs"]), 0)
+            self.assertEqual(len(scanned["paragraphs"]), 1)
+            self.assertIn("fan operates", scanned["paragraphs"][0]["text"])
+
     @classmethod
     def setUpClass(cls):
         cls.root = Path(__file__).resolve().parent.parent
