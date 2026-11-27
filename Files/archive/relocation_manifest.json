@@ -1,0 +1,163 @@
+{
+  "date": "2026-11-27",
+  "root": "C:\\Users\\ges2j\\OneDrive\\Desktop\\Assessments\\CP5403",
+  "moves": [
+    {
+      "original": "Files/condition_C_diagnosis_colab (1).ipynb",
+      "archived": "Files/archive/sync-conflicts/condition_C_diagnosis_colab (1).ipynb",
+      "sha256": "620e25a16edd78b5bb1af463f51da63d0c1d9eba93d943bcc6c95f6fc902c6bf",
+      "reason": "sync-conflicts"
+    },
+    {
+      "original": "Files/condition_C_diagnosis_colab.ipynb",
+      "archived": "Files/archive/notebooks/validation-pilots/condition_C_diagnosis_colab.ipynb",
+      "sha256": "fd83fa388c9ad2318519f3b6725d01ee73999f56a5aaae4fb87291f78a303f67",
+      "reason": "notebooks/validation-pilots"
+    },
+    {
+      "original": "Files/condition_CD_design_smoke_colab.ipynb",
+      "archived": "Files/archive/notebooks/post-test-development/condition_CD_design_smoke_colab.ipynb",
+      "sha256": "b711177f3a500624e17a289df8030c429f2138f94625afafe1a7b343edca04f9",
+      "reason": "notebooks/post-test-development"
+    },
+    {
+      "original": "Files/condition_CD_diagnosis_colab.ipynb",
+      "archived": "Files/archive/notebooks/validation-pilots/condition_CD_diagnosis_colab.ipynb",
+      "sha256": "c9507be6ce7a34cb8314010ef149b9c47018fcd669be536cebe2d70adecfd272",
+      "reason": "notebooks/validation-pilots"
+    },
+    {
+      "original": "Files/condition_CD_evidence_menu_smoke_colab.ipynb",
+      "archived": "Files/archive/notebooks/post-test-development/condition_CD_evidence_menu_smoke_colab.ipynb",
+      "sha256": "914ff08082fb22274628c7c58fa999ea0b8099706c095fdbfecc37f604fe3765",
+      "reason": "notebooks/post-test-development"
+    },
+    {
+      "original": "Files/condition_CD_evidence_review_check_colab.ipynb",
+      "archived": "Files/archive/notebooks/post-test-development/condition_CD_evidence_review_check_colab.ipynb",
+      "sha256": "6483defdd9da520e5fa2075b6a1d10f7429c05869b5ffc728a1476b48e1cd0ea",
+      "reason": "notebooks/post-test-development"
+    },
+    {
+      "original": "Files/condition_CD_filtered_retrieval_colab.ipynb",
+      "archived": "Files/archive/notebooks/validation-pilots/condition_CD_filtered_retrieval_colab.ipynb",
+      "sha256": "e5a5bf7a151843d500d131b78de98e0bd87b142fa016145555e5be3d66fa09db",
+      "reason": "notebooks/validation-pilots"
+    },
+    {
+      "original": "Files/condition_CD_new_case_review_colab.ipynb",
+      "archived": "Files/archive/notebooks/post-test-development/condition_CD_new_case_review_colab.ipynb",
+      "sha256": "bf89e1653b05967c72379488e82b49cb6f2605d529660f656248d8b9c28fa03b",
+      "reason": "notebooks/post-test-development"
+    },
+    {
+      "original": "Files/condition_CD_recovery_validation_colab.ipynb",
+      "archived": "Files/archive/notebooks/post-test-development/condition_CD_recovery_validation_colab.ipynb",
+      "sha256": "086aa8898e9bfaa3624b8db8b0ce5df7d8692b54fc21bdf7236953660065e47d",
+      "reason": "notebooks/post-test-development"
+    },
+    {
+      "original": "Files/condition_CD_revision_v2_colab.ipynb",
+      "archived": "Files/archive/notebooks/validation-pilots/condition_CD_revision_v2_colab.ipynb",
+      "sha256": "aa878728186ae777172a96584c0884ebf910ca533103c27d4c16bddfd2b24431",
+      "reason": "notebooks/validation-pilots"
+    },
+    {
+      "original": "Files/condition_CD_revision_v3_colab.ipynb",
+      "archived": "Files/archive/notebooks/validation-pilots/condition_CD_revision_v3_colab.ipynb",
+      "sha256": "945817efaeb2374ef5358d1270db37a426c24bea5a77fe8a8df2f9cd548a7271",
+      "reason": "notebooks/validation-pilots"
+    },
+    {
+      "original": "Files/condition_CD_revision_v4_colab.ipynb",
+      "archived": "Files/archive/notebooks/validation-pilots/condition_CD_revision_v4_colab.ipynb",
+      "sha256": "2c4712e8b5c3be896adff4c68983de936aaad84e976daaac16d60095e4d17f8f",
+      "reason": "notebooks/validation-pilots"
+    },
+    {
+      "original": "Files/condition_CD_selection_v5_colab.ipynb",
+      "archived": "Files/archive/notebooks/validation-pilots/condition_CD_selection_v5_colab.ipynb",
+      "sha256": "85051e1ba175eb7bfc6c8aa676f16a6cc4890a251b9300e9489af0ba80b37e46",
+      "reason": "notebooks/validation-pilots"
+    },
+    {
+      "original": "Files/condition_CD_structured_smoke_colab.ipynb",
+      "archived": "Files/archive/notebooks/post-test-development/condition_CD_structured_smoke_colab.ipynb",
+      "sha256": "30cdb626a5ff5a191c8337332df3effd668df078c7f7ada516243c56bd8d3b64",
+      "reason": "notebooks/post-test-development"
+    },
+    {
+      "original": "Files/condition_CD_two_stage_colab.ipynb",
+      "archived": "Files/archive/notebooks/validation-pilots/condition_CD_two_stage_colab.ipynb",
+      "sha256": "ab38e77d6b723d197144d58ea1db7dfd222b287480ac47977a9893d05deb5886",
+      "reason": "notebooks/validation-pilots"
+    },
+    {
+      "original": "Files/condition_CD_two_stage_validation_10_colab.ipynb",
+      "archived": "Files/archive/notebooks/validation-pilots/condition_CD_two_stage_validation_10_colab.ipynb",
+      "sha256": "a672e2b32b024b4424937db3dcdd4bd1dfab76f7d9c2d80ae3cb5673a35e6a9f",
+      "reason": "notebooks/validation-pilots"
+    },
+    {
+      "original": "Files/condition_CD_validation_10_colab.ipynb",
+      "archived": "Files/archive/notebooks/validation-pilots/condition_CD_validation_10_colab.ipynb",
+      "sha256": "7b4a2af6c5478b2f5d2212394e2da00b9e508c54bd20c528941c44197457d287",
+      "reason": "notebooks/validation-pilots"
+    },
+    {
+      "original": "Files/condition_D_literature_pilot_colab.ipynb",
+      "archived": "Files/archive/notebooks/literature-prototypes/condition_D_literature_pilot_colab.ipynb",
+      "sha256": "0a27d11084f61e24fa2cf6b79e411ad941862743a6a3e6290f63f4fb6f86671f",
+      "reason": "notebooks/literature-prototypes"
+    },
+    {
+      "original": "Files/experiment_config (1).json",
+      "archived": "Files/archive/sync-conflicts/experiment_config (1).json",
+      "sha256": "9030bce70159b300037433d111bf1783700f226bc32e4461634e8c85fb0baa75",
+      "reason": "sync-conflicts"
+    },
+    {
+      "original": "Files/grounding_judge_v2_comparison_colab.ipynb",
+      "archived": "Files/archive/notebooks/exploratory-judges/grounding_judge_v2_comparison_colab.ipynb",
+      "sha256": "531c8ea0207cbd7c67b30c2655d31b332855368cfa15a1565d538335b32e4e4d",
+      "reason": "notebooks/exploratory-judges"
+    },
+    {
+      "original": "Files/literature_ingestion_and_chunking.ipynb",
+      "archived": "Files/archive/notebooks/literature-prototypes/literature_ingestion_and_chunking.ipynb",
+      "sha256": "93639bc2236ced9eb032552d9e9b089f6b17706f346bf946fc054dc7a8c57a14",
+      "reason": "notebooks/literature-prototypes"
+    },
+    {
+      "original": "Files/llama_grounding_calibration_colab.ipynb",
+      "archived": "Files/archive/notebooks/exploratory-judges/llama_grounding_calibration_colab.ipynb",
+      "sha256": "d253d4a6694a7d36817f96a26668118ed87f61400f364c8baa986f6de2a26d72",
+      "reason": "notebooks/exploratory-judges"
+    },
+    {
+      "original": "Files/phm_diagnosis (1).py",
+      "archived": "Files/archive/sync-conflicts/phm_diagnosis (1).py",
+      "sha256": "0f4878550c02c33c9e824989a5223ee7c684eaa825c5d2789b8d901e311c0467",
+      "reason": "sync-conflicts"
+    },
+    {
+      "original": "Files/qwen14b_PHM_grounding_colab.ipynb",
+      "archived": "Files/archive/notebooks/exploratory-judges/qwen14b_PHM_grounding_colab.ipynb",
+      "sha256": "9d7ad25228bfee5c6d48a1967b2cf4477617346630883aae21743aa5151ccfc4",
+      "reason": "notebooks/exploratory-judges"
+    },
+    {
+      "original": "Files/qwen_grounding_calibration_colab.ipynb",
+      "archived": "Files/archive/notebooks/exploratory-judges/qwen_grounding_calibration_colab.ipynb",
+      "sha256": "05bba5aae4ecba16faa393a218d3879d339eb7f0135dbb30a0b0416c134f9c59",
+      "reason": "notebooks/exploratory-judges"
+    },
+    {
+      "original": "Files/test_phm_diagnosis (1).py",
+      "archived": "Files/archive/sync-conflicts/test_phm_diagnosis (1).py",
+      "sha256": "4abd83e760a5c66c5ef5c7bb127b8ed99b64a6128949e016794f9609404087d7",
+      "reason": "sync-conflicts"
+    }
+  ],
+  "policy": "Files preserved byte-for-byte. Runtime Python modules and tests retain their original paths; archived notebooks are historical, not recommended entry points."
+}
