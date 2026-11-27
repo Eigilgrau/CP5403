@@ -1,0 +1,32 @@
+{
+  "status": "saved_result_audit_passed",
+  "root": "C:\\Users\\ges2j\\OneDrive\\Desktop\\Assessments\\CP5403",
+  "classification": {
+    "C": {
+      "n": 100,
+      "accuracy": 0.52,
+      "macro_f1": 0.31794871794871793
+    },
+    "D": {
+      "n": 100,
+      "accuracy": 0.51,
+      "macro_f1": 0.3134070230844424
+    }
+  },
+  "frozen_code_hashes": 13,
+  "export_file_hashes": 6,
+  "raw_response_hashes": 400,
+  "scope": "Independent read-only recomputation from saved artifacts; no raw preprocessing rebuild, GPU inference, or independent semantic review.",
+  "tests": [
+    {
+      "module": "test_phm_two_stage.py",
+      "exit_code": 0,
+      "output": "Saved report: C:\\Users\\ges2j\\AppData\\Local\\Temp\\tmp8bq5krs4\\Outputs\\runs\\20261127T100753_paired_CD_two_stage_validation_eabc8596\nSelected requests are cached. Reviewing saved responses; no model load needed.\nSelected requests are cached. Reviewing saved responses; no model load needed.\nSaved report: C:\\Users\\ges2j\\AppData\\Local\\Temp\\tmp8bq5krs4\\Outputs\\runs\\20261127T100754_paired_CD_two_stage_validation_b450bbb9\ntest_cache_identity_depends_on_saved_decision (test_phm_two_stage.TwoStageChecks.test_cache_identity_depends_on_saved_decision) ... ok\ntest_end_to_end_failure_preserves_classification_and_resume (test_phm_two_stage.TwoStageChecks.test_end_to_end_failure_preserves_classification_and_resume) ... ok\ntest_known_channel_numbers_are_not_measurements (test_phm_two_stage.TwoStageChecks.test_known_channel_numbers_are_not_measurements) ... ok\ntest_schema_accepts_both_stages (test_phm_two_stage.TwoStageChecks.test_schema_accepts_both_stages) ... ok\ntest_second_stage_keeps_all_evidence_and_cannot_change_class (test_phm_two_stage.TwoStageChecks.test_second_stage_keeps_all_evidence_and_cannot_change_class) ... ok\ntest_stage_one_has_no_prose_and_preserves_pairing (test_phm_two_stage.TwoStageChecks.test_stage_one_has_no_prose_and_preserves_pairing) ... ok\ntest_valid_decision_assembles_numbers_without_prose (test_phm_two_stage.TwoStageChecks.test_valid_decision_assembles_numbers_without_prose) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 2.090s\n\nOK\n"
+    },
+    {
+      "module": "test_phm_heldout.py",
+      "exit_code": 0,
+      "output": "Saved report: C:\\Users\\ges2j\\AppData\\Local\\Temp\\tmp1iiwblmc\\Outputs\\runs\\20261127T100755_paired_CD_two_stage_heldout_2fbeba38\ntest_failed_predictions_stay_in_metrics (test_phm_heldout.HeldoutChecks.test_failed_predictions_stay_in_metrics) ... ok\ntest_heldout_rejects_partial_sample (test_phm_heldout.HeldoutChecks.test_heldout_rejects_partial_sample) ... ok\ntest_paired_bootstrap_is_reproducible_and_keeps_clusters_paired (test_phm_heldout.HeldoutChecks.test_paired_bootstrap_is_reproducible_and_keeps_clusters_paired) ... ok\ntest_pending_test_inference_cannot_open_labels (test_phm_heldout.HeldoutChecks.test_pending_test_inference_cannot_open_labels) ... ok\ntest_public_loader_never_reads_test_labels_and_rejects_changes (test_phm_heldout.HeldoutChecks.test_public_loader_never_reads_test_labels_and_rejects_changes) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.497s\n\nOK\n"
+    }
+  ]
+}
